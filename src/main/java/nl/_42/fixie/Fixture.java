@@ -1,6 +1,7 @@
 package nl._42.fixie;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Indicates that an annotated class is a "Fixture", functioning as a
@@ -17,5 +18,6 @@ import org.springframework.stereotype.Component;
  * @see Component
  */
 @Component
+@Transactional
 public @interface Fixture {
 }

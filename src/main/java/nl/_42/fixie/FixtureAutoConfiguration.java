@@ -10,7 +10,7 @@ public class FixtureAutoConfiguration {
 
   @Bean
   public Fixtures fixtures() {
-    return new Fixtures();
+    return Fixtures.get();
   }
 
   @Bean

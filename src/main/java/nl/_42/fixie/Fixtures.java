@@ -10,6 +10,15 @@ public class Fixtures {
 
   private final ConcurrentHashMap<String, Object> values = new ConcurrentHashMap<>();
 
+  private static final Fixtures INSTANCE = new Fixtures();
+
+  private Fixtures() {
+  }
+
+  public static Fixtures get() {
+    return INSTANCE;
+  }
+
   public void clear() {
     values.clear();
   }
