@@ -2,7 +2,7 @@
 
 Fixie is a lightweight library for managing test `Fixtures`.
 
-Fixtures are standardized data structures that represent real data as much as possible. 
+Fixtures are standardized data sets that represent production data as much as possible. 
 These fixtures are used as input in regression tests to verify that the functionality 
 will work accordingly:
 
