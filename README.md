@@ -27,13 +27,13 @@ Because fixtures object are unique, they should only be created once per test me
 we might violate database constraints or create strange test results. Fixie manages this uniqueness, 
 allowing the developers to focus on their tests instead.
 
+By annotating the fixture class with `@Fixture`, Fixie will automatically proxy the bean with an
+in-memory cache, named `Fixtures`. This cache is reset before and after each test method invocation,
+considering the database should also be truncated.
+
 The uniqueness of our fixtures is guaranteed, allowing fixtures to be used multiple times and even use 
 fixtures in other fixtures. This way we reuse code as much as possible and make the construction of 
 complex data structures easier:
-
-By annotating the fixture class with `@Fixture`, Fixie will automatically proxy the bean with an
-in-memory cache, named `Fixtures`. This cache is reset before and after each test method invocation,
-considering the database should also be truncated:
 
 ```java
 @Fixture
