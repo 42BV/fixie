@@ -1,14 +1,15 @@
 package nl._42.fixie;
 
 import java.lang.reflect.Method;
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Storage of all active fixtures.
  */
 public class Fixtures {
 
-  private final ConcurrentHashMap<String, Object> values = new ConcurrentHashMap<>();
+  private final Map<String, Object> values = new HashMap<>();
 
   private static final Fixtures INSTANCE = new Fixtures();
 
@@ -29,7 +30,12 @@ public class Fixtures {
   }
 
   public Object get(String key, Generator generator) {
-    return values.computeIfAbsent(key, argument -> generate(generator));
+    Object value = values.get(key);
+    if (value == null) {
+      value = generate(generator);
+      values.put(key, value);
+    }
+    return value;
   }
 
   private Object generate(Generator generator) {
