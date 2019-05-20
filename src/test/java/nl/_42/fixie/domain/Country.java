@@ -1,4 +1,4 @@
-package nl._42.fixie;
+package nl._42.fixie.domain;
 
 import lombok.Getter;
 import lombok.Setter;

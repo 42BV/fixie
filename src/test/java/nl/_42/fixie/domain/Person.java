@@ -1,7 +1,8 @@
-package nl._42.fixie;
+package nl._42.fixie.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import nl._42.fixie.domain.Country;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,5 +27,8 @@ public class Person {
 
   @ManyToOne
   private Country country;
+
+  @ManyToOne
+  private Person partner;
 
 }

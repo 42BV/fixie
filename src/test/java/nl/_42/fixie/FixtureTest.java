@@ -1,6 +1,10 @@
 package nl._42.fixie;
 
 import nl._42.database.truncator.DatabaseTruncator;
+import nl._42.fixie.domain.Country;
+import nl._42.fixie.domain.CountryFixture;
+import nl._42.fixie.domain.Person;
+import nl._42.fixie.domain.PersonFixture;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -49,12 +53,26 @@ public class FixtureTest {
 
   @Test
   @DisplayName("Fixtures should be able to re-use other fixtures")
-  public void fixtures_complex() {
+  public void fixtures_with_fixtures() {
     Person jan = persons.jan();
 
     assertEquals("Jan de Boer", jan.getName());
     assertEquals(countries.netherlands(), jan.getCountry());
     assertEquals(jan, persons.jan());
+  }
+
+  @Test
+  @DisplayName("Fixtures should be able to re-use similar fixtures")
+  public void fixtures_with_fixtures_same_type() {
+    Person eva = persons.eva();
+
+    assertEquals("Eva de Vries", eva.getName());
+    assertEquals(countries.netherlands(), eva.getCountry());
+
+    Person joey = eva.getPartner();
+    assertEquals(persons.joey(), joey);
+    assertEquals("Joey Bakker", joey.getName());
+    assertEquals(countries.netherlands(), joey.getCountry());
   }
 
   @Nested

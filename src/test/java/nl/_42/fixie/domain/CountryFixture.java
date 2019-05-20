@@ -1,6 +1,7 @@
-package nl._42.fixie;
+package nl._42.fixie.domain;
 
 import lombok.AllArgsConstructor;
+import nl._42.fixie.Fixture;
 
 @Fixture
 @AllArgsConstructor
