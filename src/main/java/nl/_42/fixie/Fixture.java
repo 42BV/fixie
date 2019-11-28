@@ -1,7 +1,14 @@
 package nl._42.fixie;
 
+import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.lang.annotation.Documented;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
  * Indicates that an annotated class is a "Fixture", functioning as a
@@ -17,7 +24,19 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Jeroen van Schagen
  * @see Component
  */
+@Target({ ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
 @Component
 @Transactional
 public @interface Fixture {
+
+    /**
+     * The value may indicate a suggestion for a logical component name,
+     * to be turned into a Spring bean in case of an autodetected component.
+     * @return the suggested component name, if any (or empty String otherwise)
+     */
+    @AliasFor(annotation = Component.class)
+    String value() default "";
+
 }
