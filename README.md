@@ -48,7 +48,7 @@ public class PersonFixtures {
         person.setName("Jan");
         person.setEmail("jan@42.nl");
         person.setCountry(countries.netherlands());
-        return repository.save();
+        return repository.save(person);
     }
     
     public Person dirk() {
@@ -56,7 +56,7 @@ public class PersonFixtures {
         person.setName("Dirk");
         person.setEmail("dirk@42.nl");
         person.setCountry(countries.netherlands());
-        return repository.save();
+        return repository.save(person);
     }
     
 }
@@ -97,9 +97,9 @@ Include the dependency in your project:
 
 ```xml
 <dependency>
-    <groupId>nl._42</groupId>
+    <groupId>nl.42</groupId>
     <artifactId>fixie</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
