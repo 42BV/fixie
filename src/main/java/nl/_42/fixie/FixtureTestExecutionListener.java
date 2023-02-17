@@ -1,11 +1,9 @@
 package nl._42.fixie;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.test.context.TestContext;
-import org.springframework.test.context.TestExecutionListener;
+import org.springframework.test.context.support.AbstractTestExecutionListener;
 
-@Slf4j
-public class FixtureTestExecutionListener implements TestExecutionListener {
+public class FixtureTestExecutionListener extends AbstractTestExecutionListener {
 
     @Override
     public void beforeTestMethod(TestContext testContext) {

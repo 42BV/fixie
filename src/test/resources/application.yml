@@ -1,3 +1,4 @@
 spring:
-  datasource:
-    platform: h2
+  sql:
+    init:
+      platform: h2

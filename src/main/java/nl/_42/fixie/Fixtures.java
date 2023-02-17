@@ -3,7 +3,6 @@ package nl._42.fixie;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.function.Supplier;
 
 import static java.lang.String.format;
 
