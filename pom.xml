@@ -11,7 +11,7 @@
 
     <groupId>nl.42</groupId>
     <artifactId>fixie</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>2.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Lightweight fixture support</name>
@@ -35,8 +35,8 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com:42BV/fixie.git</connection>
-        <developerConnection>scm:git:https://github.com:42BV/fixie.git</developerConnection>
+        <connection>scm:git:git@github.com:42BV/fixie.git</connection>
+        <developerConnection>scm:git:git@github.com:42BV/fixie.git</developerConnection>
         <url>https://github.com/42BV/fixie</url>
         <tag>HEAD</tag>
     </scm>
